@@ -1,0 +1,34 @@
+﻿@model IEnumerable<CountryIndexVM>
+
+<a asp-action="Create" class="btn btn-primary"  asp-controller="Country">Create New Country</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Name)</th>
+            <th>@Html.DisplayNameFor(model => model.PhoneCode)</th>
+            <th></th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var countries in Model)
+        {
+            <tr class="gradeX">
+                <td>@Html.DisplayFor(modelItem => countries.Name)</td>
+                <td>@Html.DisplayFor(modelItem => countries.PhoneCode)</td>
+                <td>
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@countries.Id">Delete</a>
+                    <a class="btn btn-info" asp-action="Update" asp-route-id="@countries.Id">Update</a>
+                </td>
+            </tr>
+        }
+
+
+</table>
+
+
+
+
+

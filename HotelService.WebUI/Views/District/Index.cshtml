@@ -1,0 +1,31 @@
+﻿@model IEnumerable<DistrictIndexVM>
+
+<a asp-action="Create" class="btn btn-primary" asp-controller="District">Create New District</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Name)</th>
+            <th>@Html.DisplayNameFor(model => model.PhoneCode)</th>
+            <th>@Html.DisplayNameFor(model => model.City)</th>
+            <th></th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var districts in Model)
+        {
+            <tr class="gradeX">
+                <td>@Html.DisplayFor(modelItem => districts.Name)</td>
+                <td>@Html.DisplayFor(modelItem => districts.PhoneCode)</td>
+                <td>@Html.DisplayFor(modelItem => districts.City)</td>
+                <td>
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@districts.Id">Delete</a>
+                    <a class="btn btn-info" asp-action="Update" asp-route-id="@districts.Id">Update</a>
+                </td>
+            </tr>
+        }
+
+
+</table>
