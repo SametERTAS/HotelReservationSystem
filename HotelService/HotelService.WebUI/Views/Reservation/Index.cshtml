@@ -1,0 +1,33 @@
+﻿@model IEnumerable<ReservationIndexVM>
+<a class="btn btn-primary" asp-action="Create">Create New Reservation</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.RoomInfo)</th>
+            <th>@Html.DisplayNameFor(model => model.PersonCount)</th>
+            <th>@Html.DisplayNameFor(model => model.CheckInDate)</th>
+            <th>@Html.DisplayNameFor(model => model.CheckOutDate)</th>
+            <th>@Html.DisplayNameFor(model => model.Price)</th>
+            <th></th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var reservation in Model)
+        {
+            <tr class="gradeX">
+                <td>@Html.DisplayFor(modelItem => reservation.RoomInfo)</td>
+                <td>@Html.DisplayFor(modelItem => reservation.PersonCount)</td>
+                <td>@Html.DisplayFor(modelItem => reservation.CheckInDate)</td>
+                <td>@Html.DisplayFor(modelItem => reservation.CheckOutDate)</td>
+                <td>@Html.DisplayFor(modelItem => reservation.Price)</td>
+                <td>
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@reservation.Id">Delete</a>
+                    <a class="btn btn-info" asp-action="Update" asp-route-id="@reservation.Id">Update</a>
+                </td>
+            </tr>
+        }
+
+
+</table>
+

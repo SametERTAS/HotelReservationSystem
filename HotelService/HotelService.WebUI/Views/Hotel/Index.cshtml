@@ -1,0 +1,31 @@
+﻿@model IEnumerable<HotelIndexVM>
+
+<a asp-action="Create" class="btn btn-primary" asp-controller="Hotel">Create New Hotel</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Name)</th>
+            <th>@Html.DisplayNameFor(model => model.Capacity)</th>
+            <th>@Html.DisplayNameFor(model => model.District)</th>
+            <th></th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var hotel in Model)
+        {
+            <tr class="gradeX">
+                <td>@Html.DisplayFor(modelItem => hotel.Name)</td>
+                <td>@Html.DisplayFor(modelItem => hotel.Capacity)</td>
+                <td>@Html.DisplayFor(modelItem => hotel.District)</td>
+                <td>
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@hotel.Id">Delete</a>
+                    <a class="btn btn-info" asp-action="Update" asp-route-id="@hotel.Id">Update</a>
+                </td>
+            </tr>
+        }
+
+
+</table>

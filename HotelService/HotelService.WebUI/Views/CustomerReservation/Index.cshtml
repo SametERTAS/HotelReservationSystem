@@ -1,0 +1,34 @@
+﻿@model IEnumerable<CustomerReservationIndexVM>
+
+<a asp-action="Create" class="btn btn-primary" >Create New Customer Reservation</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.CustomerInfo)</th>
+            <th>@Html.DisplayNameFor(model => model.ReservationInfo)</th>
+            <th></th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var customerReservation in Model)
+        {
+            <tr class="gradeX">
+                <td>@Html.DisplayFor(modelItem => customerReservation.CustomerInfo)</td>
+                <td>@Html.DisplayFor(modelItem => customerReservation.ReservationInfo)</td>
+                <td>
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@customerReservation.Id">Delete</a>
+                    <a class="btn btn-info" asp-action="Update" asp-route-id="@customerReservation.Id">Update</a>
+                </td>
+            </tr>
+        }
+
+
+</table>
+
+
+
+
+

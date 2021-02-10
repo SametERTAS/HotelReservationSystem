@@ -1,0 +1,34 @@
+﻿@model IEnumerable<RoomTypeIndexVM>
+
+<a asp-action="Create" class="btn btn-primary" >Create New Room Type</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.RoomName)</th>
+            <th>@Html.DisplayNameFor(model => model.Capacity)</th>
+            <th></th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var roomType in Model)
+        {
+            <tr class="gradeX">
+                <td>@Html.DisplayFor(modelItem => roomType.RoomName)</td>
+                <td>@Html.DisplayFor(modelItem => roomType.Capacity)</td>
+                <td>
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@roomType.Id">Delete</a>
+                    <a class="btn btn-info" asp-action="Update" asp-route-id="@roomType.Id">Update</a>
+                </td>
+            </tr>
+        }
+
+
+</table>
+
+
+
+
+

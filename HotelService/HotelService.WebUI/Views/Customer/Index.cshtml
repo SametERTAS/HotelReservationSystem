@@ -1,0 +1,37 @@
+﻿@model IEnumerable<CustomerIndexVM>
+<a class="btn btn-primary" asp-action="Create">Create New City</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.FirstName)</th>
+            <th>@Html.DisplayNameFor(model => model.LastName)</th>
+            <th>@Html.DisplayNameFor(model => model.BirthDate)</th>
+            <th>@Html.DisplayNameFor(model => model.Adress)</th>
+            <th>@Html.DisplayNameFor(model => model.PhoneNumber)</th>
+            <th>@Html.DisplayNameFor(model => model.IdentityNumber)</th>
+            <th>@Html.DisplayNameFor(model => model.Genderr)</th>
+            <th></th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var customer in Model)
+        {
+            <tr class="gradeX">
+                <td>@Html.DisplayFor(modelItem => customer.FirstName)</td>
+                <td>@Html.DisplayFor(modelItem => customer.LastName)</td>
+                <td>@Html.DisplayFor(modelItem => customer.BirthDate)</td>
+                <td>@Html.DisplayFor(modelItem => customer.Adress)</td>
+                <td>@Html.DisplayFor(modelItem => customer.PhoneNumber)</td>
+                <td>@Html.DisplayFor(modelItem => customer.IdentityNumber)</td>
+                <td>@Html.DisplayFor(modelItem => customer.Genderr)</td>
+                <td>
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@customer.Id">Delete</a>
+                    <a class="btn btn-info" asp-action="Update" asp-route-id="@customer.Id">Update</a>
+                </td>
+            </tr>
+        }
+
+
+</table>
+

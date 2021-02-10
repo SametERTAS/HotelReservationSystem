@@ -1,0 +1,30 @@
+﻿@model IEnumerable<DocumentIndexVM>
+<a class="btn btn-primary" asp-action="Create">Create New City</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.PhotoUrl)</th>
+            <th>@Html.DisplayNameFor(model => model.IdentityCardCopy)</th>
+            <th>@Html.DisplayNameFor(model => model.CustomerInfo)</th>
+
+            <th></th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var document in Model)
+        {
+            <tr class="gradeX">
+                <td>@Html.DisplayFor(modelItem => document.PhotoUrl)</td>
+                <td>@Html.DisplayFor(modelItem => document.IdentityCardCopy)</td>
+                <td>@Html.DisplayFor(modelItem => document.CustomerInfo)</td>
+                <td>
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@document.Id">Delete</a>
+                    <a class="btn btn-info" asp-action="Update" asp-route-id="@document.Id">Update</a>
+                </td>
+            </tr>
+        }
+
+
+</table>
+
