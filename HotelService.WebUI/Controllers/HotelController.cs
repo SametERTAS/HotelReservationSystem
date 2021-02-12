@@ -1,6 +1,9 @@
-﻿using HotelSerivce.Data.Abstract;
+﻿using AutoMapper;
+using HotelSerivce.Data.Abstract;
 using HotelService.Entity;
+using HotelService.WebUI.ViewModels.Hotel;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,51 +14,77 @@ namespace HotelService.WebUI.Controllers
     public class HotelController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
-        public HotelController(IUnitOfWork unitOfWork)
+        private readonly IMapper _mapper;
+        public HotelController(IUnitOfWork unitOfWork, IMapper mapper)
         {
             _unitOfWork = unitOfWork;
+            _mapper = mapper;
         }
         public IActionResult Index()
         {
-            return View(_unitOfWork.Hotel.GetAll());
+            var hotels = _unitOfWork.Hotel.GetAllInclude(null,"District");
+            var model = _mapper.Map<IEnumerable<HotelIndexVM>>(hotels);
+            return View(model);
         }
 
         [HttpGet]
         public IActionResult Create()
         {
+            var districts = _unitOfWork.District.GetAll();
+            ViewBag.Districts = new SelectList(districts, "Id", "Name");
             return View();
         }
         [HttpPost]
-        public IActionResult Create(Hotel hotel)
+        public IActionResult Create(HotelCreateVM hotel)
         {
             if (ModelState.IsValid)
             {
-                _unitOfWork.Hotel.Add(hotel);
+                var model = _mapper.Map<Hotel>(hotel);
+                _unitOfWork.Hotel.Add(model);
             }
 
             return RedirectToAction("Index");
         }
         [HttpGet]
-        public IActionResult Update()
+        public IActionResult Update(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var districts = _unitOfWork.District.GetAll();
+            ViewBag.Districts = new SelectList(districts, "Id", "Name");
+            var entity = _unitOfWork.Hotel.GetById(x => x.Id.Equals(id));
+            var model = _mapper.Map<HotelUpdateVM>(entity);
+            if (model == null)
+            {
+                return NotFound();
+            }
+            return View(model);
         }
 
         [HttpPost]
-        public IActionResult Update(Hotel hotel)
+        public IActionResult Update(HotelUpdateVM hotel)
         {
             if (ModelState.IsValid)
             {
-                _unitOfWork.Hotel.Update(hotel);
+                var model = _mapper.Map<Hotel>(hotel);
+                _unitOfWork.Hotel.Update(model);
             }
             return RedirectToAction("Index");
         }
-        public IActionResult Delete(Hotel hotel)
+        public IActionResult Delete(int? id)
         {
-            if (ModelState.IsValid)
+            if (id == null)
             {
-                _unitOfWork.Hotel.Delete(hotel);
+                return NotFound();
             }
+            var entity = _unitOfWork.Hotel.GetById(x => x.Id.Equals(id));
+            if (entity == null)
+            {
+                return NotFound();
+            }
+            _unitOfWork.Hotel.Delete(entity);
             return RedirectToAction("Index");
         }
     }

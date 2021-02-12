@@ -1,6 +1,9 @@
-﻿using HotelSerivce.Data.Abstract;
+﻿using AutoMapper;
+using HotelSerivce.Data.Abstract;
 using HotelService.Entity;
+using HotelService.WebUI.ViewModels.CustomerReservation;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,51 +14,82 @@ namespace HotelService.WebUI.Controllers
     public class CustomerReservationController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
-        public CustomerReservationController(IUnitOfWork unitOfWork)
+        private readonly IMapper _mapper;
+        public CustomerReservationController(IUnitOfWork unitOfWork, IMapper mapper)
         {
             _unitOfWork = unitOfWork;
+            _mapper = mapper;
         }
         public IActionResult Index()
         {
-            return View(_unitOfWork.CustomerReservation.GetAll());
+            var customerReservations = _unitOfWork.CustomerReservation.GetAllInclude(null,"Reservation.Room.RoomType","Customer");
+            var model = _mapper.Map<IEnumerable<CustomerReservationIndexVM>>(customerReservations);
+            return View(model);
         }
 
         [HttpGet]
         public IActionResult Create()
         {
+            var customers = _unitOfWork.Customer.GetAll();
+            var reservations = _unitOfWork.Reservation.GetAll();
+            ViewBag.Customers = new SelectList(customers, "Id", "FullName");
+            ViewBag.Reservations = new SelectList(reservations, "Id", "Id");
             return View();
         }
         [HttpPost]
-        public IActionResult Create(CustomerReservation customerReservation)
+        public IActionResult Create(CustomerReservationCreateVM customerReservation)
         {
             if (ModelState.IsValid)
             {
-                _unitOfWork.CustomerReservation.Add(customerReservation);
+                var model = _mapper.Map<CustomerReservation>(customerReservation);
+                _unitOfWork.CustomerReservation.Add(model);
             }
 
             return RedirectToAction("Index");
         }
         [HttpGet]
-        public IActionResult Update()
+        public IActionResult Update(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var entity = _unitOfWork.CustomerReservation.GetById(x => x.Id.Equals(id));
+            var model = _mapper.Map<CustomerReservationUpdateVM>(entity);
+            if (model == null)
+            {
+                return NotFound();
+            }
+            var customers = _unitOfWork.Customer.GetAll();
+            var reservations = _unitOfWork.Reservation.GetAll();
+            ViewBag.Customers = new SelectList(customers, "Id", "FullName");
+            ViewBag.Reservations = new SelectList(reservations, "Id", "Id");
+            return View(model);
         }
 
         [HttpPost]
-        public IActionResult Update(CustomerReservation customerReservation)
+        public IActionResult Update(CustomerReservationUpdateVM customerReservation)
         {
             if (ModelState.IsValid)
             {
-                _unitOfWork.CustomerReservation.Update(customerReservation);
+                var model = _mapper.Map<CustomerReservation>(customerReservation);
+                _unitOfWork.CustomerReservation.Update(model);
             }
             return RedirectToAction("Index");
         }
-        public IActionResult Delete(CustomerReservation customerReservation)
+        public IActionResult Delete(int? id)
         {
-            if (ModelState.IsValid)
+            if (id == null)
             {
-                _unitOfWork.CustomerReservation.Delete(customerReservation);
+                return NotFound();
             }
+            var entity = _unitOfWork.CustomerReservation.GetById(x => x.Id.Equals(id));
+
+            if (entity == null)
+            {
+                return NotFound();
+            }
+            _unitOfWork.CustomerReservation.Delete(entity);
             return RedirectToAction("Index");
         }
     }

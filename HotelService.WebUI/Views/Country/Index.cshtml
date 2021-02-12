@@ -13,14 +13,14 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var countries in Model)
+        @foreach (var country in Model)
         {
             <tr class="gradeX">
-                <td>@Html.DisplayFor(modelItem => countries.Name)</td>
-                <td>@Html.DisplayFor(modelItem => countries.PhoneCode)</td>
+                <td>@Html.DisplayFor(modelItem => country.Name)</td>
+                <td>@Html.DisplayFor(modelItem => country.PhoneCode)</td>
                 <td>
-                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@countries.Id">Delete</a>
-                    <a class="btn btn-info" asp-action="Update" asp-route-id="@countries.Id">Update</a>
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@country.Id">Delete</a>
+                    <a class="btn btn-info" asp-action="Update" asp-route-id="@country.Id">Update</a>
                 </td>
             </tr>
         }

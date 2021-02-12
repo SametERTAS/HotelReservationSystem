@@ -54,7 +54,7 @@ namespace HotelService.WebUI.Controllers
                 return NotFound();
             }
 
-            var country = _unitOfWork.Country.FindById((int)id);
+            var country = _unitOfWork.Country.GetById(x=>x.Id.Equals(id));
             var model = _mapper.Map<CountryUpdateVM>(country);
             if (model == null)
             {
@@ -74,18 +74,21 @@ namespace HotelService.WebUI.Controllers
 
             return RedirectToAction("Index");
         }
-        public IActionResult Delete(int id)
+        public IActionResult Delete(int? id)
         {
-            var entity = _unitOfWork.Country.FindById(id);
-            var model = _mapper.Map<Country>(entity);
-            if (model !=null)
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var model = _unitOfWork.Country.GetById(x => x.Id.Equals(id));
+            if (model != null)
             {
                 _unitOfWork.Country.Delete(model);
                 return RedirectToAction("Index");
             }
             return NotFound();
 
-            
+
         }
     }
 }

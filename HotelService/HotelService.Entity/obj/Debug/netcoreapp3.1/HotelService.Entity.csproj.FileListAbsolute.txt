@@ -1,9 +1,0 @@
-C:\Users\samet\source\repos\HotelService\HotelService.Entity\bin\Debug\netcoreapp3.1\HotelService.Entity.deps.json
-C:\Users\samet\source\repos\HotelService\HotelService.Entity\bin\Debug\netcoreapp3.1\HotelService.Entity.dll
-C:\Users\samet\source\repos\HotelService\HotelService.Entity\bin\Debug\netcoreapp3.1\HotelService.Entity.pdb
-C:\Users\samet\source\repos\HotelService\HotelService.Entity\obj\Debug\netcoreapp3.1\HotelService.Entity.csprojAssemblyReference.cache
-C:\Users\samet\source\repos\HotelService\HotelService.Entity\obj\Debug\netcoreapp3.1\HotelService.Entity.AssemblyInfoInputs.cache
-C:\Users\samet\source\repos\HotelService\HotelService.Entity\obj\Debug\netcoreapp3.1\HotelService.Entity.AssemblyInfo.cs
-C:\Users\samet\source\repos\HotelService\HotelService.Entity\obj\Debug\netcoreapp3.1\HotelService.Entity.csproj.CoreCompileInputs.cache
-C:\Users\samet\source\repos\HotelService\HotelService.Entity\obj\Debug\netcoreapp3.1\HotelService.Entity.dll
-C:\Users\samet\source\repos\HotelService\HotelService.Entity\obj\Debug\netcoreapp3.1\HotelService.Entity.pdb

@@ -42,7 +42,17 @@ namespace HotelSerivce.Data.Concrete.EfCore
             return filter == null ? _context.Set<TEntity>().ToList() : _context.Set<TEntity>().Where(filter).ToList();
 
         }
+        public IQueryable<TEntity> GetAllInclude(Expression<Func<TEntity, bool>> filter = null, params string[] includeProperties)
+        {
+            IQueryable<TEntity> query = _context.Set<TEntity>();
+            foreach (var includeProperty in includeProperties)
+            {
+                query = query.Include(includeProperty);
+                
+            }
+            return query;
 
+        }
         public TEntity GetById(Expression<Func<TEntity, bool>> filter)
         {
 
@@ -58,10 +68,7 @@ namespace HotelSerivce.Data.Concrete.EfCore
             _context.SaveChanges();
 
         }
-        public TEntity FindById(int id)
-        {
-            return _context.Set<TEntity>().Find(id);
-        }
+      
         /*  public void SaveChanges()
           {
               _context.SaveChanges();

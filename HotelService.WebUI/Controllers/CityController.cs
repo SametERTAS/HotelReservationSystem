@@ -22,7 +22,7 @@ namespace HotelService.WebUI.Controllers
         }
         public IActionResult Index()
         {
-            var cities = _unitOfWork.City.GetAll();
+            var cities = _unitOfWork.City.GetAllInclude(null, "Country");
             var model = _mapper.Map<IEnumerable<CityIndexVM>>(cities);
             return View(model);
         }
@@ -35,6 +35,7 @@ namespace HotelService.WebUI.Controllers
         }
         [HttpPost]
         public IActionResult Create(CityCreateVM city)
+
         {
             if (ModelState.IsValid)
             {
@@ -49,12 +50,13 @@ namespace HotelService.WebUI.Controllers
         [HttpGet]
         public IActionResult Update(int? id)
         {
-            ViewBag.Countries = new SelectList(_unitOfWork.Country.GetAll(), "Id", "Name");
+            var countries = _unitOfWork.Country.GetAll();
+            ViewBag.Countries = new SelectList(countries, "Id", "Name");
             if (id == null)
             {
                 return NotFound();
             }
-            var city = _unitOfWork.City.FindById((int)id);
+            var city = _unitOfWork.City.GetById(x => x.Id.Equals(id));
             var model = _mapper.Map<CityUpdateVM>(city);
             if (model == null)
             {
@@ -75,19 +77,18 @@ namespace HotelService.WebUI.Controllers
         }
         public IActionResult Delete(int? id)
         {
-            if (id ==null)
+            if (id == null)
             {
                 return NotFound();
             }
-            var entity = _unitOfWork.City.FindById((int)id);
-            var model = _mapper.Map<City>(entity);
+            var model = _unitOfWork.City.GetById(x => x.Id.Equals(id));
             if (ModelState.IsValid)
             {
                 _unitOfWork.City.Delete(model);
                 return RedirectToAction("Index");
             }
             return NotFound();
-            
+
         }
     }
 }

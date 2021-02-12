@@ -25,13 +25,4 @@
     <ProjectReference Include="..\HotelService.Entity\HotelService.Entity.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="ViewModels\CustomerReservation\" />
-    <Folder Include="ViewModels\Document\" />
-    <Folder Include="ViewModels\Hotel\" />
-    <Folder Include="ViewModels\Reservation\" />
-    <Folder Include="ViewModels\Room\" />
-    <Folder Include="ViewModels\RoomType\" />
-  </ItemGroup>
-
 </Project>

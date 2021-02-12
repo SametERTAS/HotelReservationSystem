@@ -12,16 +12,16 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var cities in Model)
+            @foreach (var city in Model)
             {
                 <tr class="gradeX">
-                    <td>@Html.DisplayFor(modelItem => cities.Name)</td>
-                    <td>@Html.DisplayFor(modelItem => cities.PhoneCode)</td>
-                    <td>@Html.DisplayFor(modelItem => cities.PlateCode)</td>
-                    <td>@Html.DisplayFor(modelItem => cities.CountryName)</td>
+                    <td>@Html.DisplayFor(modelItem => city.Name)</td>
+                    <td>@Html.DisplayFor(modelItem => city.PhoneCode)</td>
+                    <td>@Html.DisplayFor(modelItem => city.PlateCode)</td>
+                    <td>@Html.DisplayFor(modelItem => city.CountryName)</td>
                     <td>
-                        <a class="btn btn-danger" asp-action="Delete" asp-route-id="@cities.Id">Delete</a>
-                        <a class="btn btn-info" asp-action="Update" asp-route-id="@cities.Id">Update</a>
+                        <a class="btn btn-danger" asp-action="Delete" asp-route-id="@city.Id">Delete</a>
+                        <a class="btn btn-info" asp-action="Update" asp-route-id="@city.Id">Update</a>
                     </td>
                 </tr>
             }

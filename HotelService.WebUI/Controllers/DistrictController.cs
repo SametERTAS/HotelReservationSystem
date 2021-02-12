@@ -22,7 +22,7 @@ namespace HotelService.WebUI.Controllers
         }
         public IActionResult Index()
         {
-            var districts = _unitOfWork.District.GetAll();
+            var districts = _unitOfWork.District.GetAllInclude(null,"City");
             var model = _mapper.Map<IEnumerable<DistrictIndexVM>>(districts);
             return View(model);
         }
@@ -45,25 +45,39 @@ namespace HotelService.WebUI.Controllers
             return RedirectToAction("Index");
         }
         [HttpGet]
-        public IActionResult Update()
+        public IActionResult Update(int? id)
         {
-            return View();
+            var cities = _unitOfWork.City.GetAll();
+            ViewBag.Cities = new SelectList(cities, "Id", "Name");
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var district = _unitOfWork.District.GetById(x=>x.Id.Equals(id));
+            var model = _mapper.Map<DistrictUpdateVM>(district);
+            return View(model);
         }
 
         [HttpPost]
-        public IActionResult Update(District district)
+        public IActionResult Update(DistrictUpdateVM district)
         {
             if (ModelState.IsValid)
             {
-                _unitOfWork.District.Update(district);
+                var model = _mapper.Map<District>(district);
+                _unitOfWork.District.Update(model);
             }
             return RedirectToAction("Index");
         }
-        public IActionResult Delete(District district)
+        public IActionResult Delete(int? id)
         {
-            if (ModelState.IsValid)
+            if (id == null)
             {
-                _unitOfWork.District.Delete(district);
+                return NotFound();
+            }
+            var model = _unitOfWork.District.GetById();
+            if (model != null)
+            {
+                _unitOfWork.District.Delete(model);
             }
             return RedirectToAction("Index");
         }
