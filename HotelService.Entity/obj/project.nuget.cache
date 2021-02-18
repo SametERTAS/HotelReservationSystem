@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3LNax+l6Ovc2ceL8IW6u+E263asTIkGXKrMb59PYEjOHM3Pl+POGnIXOJQvJzCDmnUdDRHfwwUBGULrclZ6hSw==",
+  "dgSpecHash": "ufmJSZjq9QA58u1Leqzr06XPlTq0YDt3TB2hDcDc/raUEkq3m+67sFz2GkwTsIrl/1L9CuiiNMTC/LXapytGRQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\samet\\source\\repos\\HotelService\\HotelService.Entity\\HotelService.Entity.csproj",
+  "projectFilePath": "C:\\Users\\samet\\source\\repos\\HotelReservation\\HotelService.Entity\\HotelService.Entity.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

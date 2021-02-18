@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\samet\\source\\repos\\HotelService\\HotelService.WebUI\\HotelService.WebUI.csproj": {}
+    "C:\\Users\\samet\\source\\repos\\HotelReservation\\HotelService.WebUI\\HotelService.WebUI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\samet\\source\\repos\\HotelService\\HotelSerivce.Data\\HotelSerivce.Data.csproj": {
+    "C:\\Users\\samet\\source\\repos\\HotelReservation\\HotelSerivce.Data\\HotelSerivce.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\samet\\source\\repos\\HotelService\\HotelSerivce.Data\\HotelSerivce.Data.csproj",
+        "projectUniqueName": "C:\\Users\\samet\\source\\repos\\HotelReservation\\HotelSerivce.Data\\HotelSerivce.Data.csproj",
         "projectName": "HotelSerivce.Data",
-        "projectPath": "C:\\Users\\samet\\source\\repos\\HotelService\\HotelSerivce.Data\\HotelSerivce.Data.csproj",
+        "projectPath": "C:\\Users\\samet\\source\\repos\\HotelReservation\\HotelSerivce.Data\\HotelSerivce.Data.csproj",
         "packagesPath": "C:\\Users\\samet\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\samet\\source\\repos\\HotelService\\HotelSerivce.Data\\obj\\",
+        "outputPath": "C:\\Users\\samet\\source\\repos\\HotelReservation\\HotelSerivce.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -32,8 +32,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\samet\\source\\repos\\HotelService\\HotelService.Entity\\HotelService.Entity.csproj": {
-                "projectPath": "C:\\Users\\samet\\source\\repos\\HotelService\\HotelService.Entity\\HotelService.Entity.csproj"
+              "C:\\Users\\samet\\source\\repos\\HotelReservation\\HotelService.Entity\\HotelService.Entity.csproj": {
+                "projectPath": "C:\\Users\\samet\\source\\repos\\HotelReservation\\HotelService.Entity\\HotelService.Entity.csproj"
               }
             }
           }
@@ -82,14 +82,14 @@
         }
       }
     },
-    "C:\\Users\\samet\\source\\repos\\HotelService\\HotelService.Entity\\HotelService.Entity.csproj": {
+    "C:\\Users\\samet\\source\\repos\\HotelReservation\\HotelService.Entity\\HotelService.Entity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\samet\\source\\repos\\HotelService\\HotelService.Entity\\HotelService.Entity.csproj",
+        "projectUniqueName": "C:\\Users\\samet\\source\\repos\\HotelReservation\\HotelService.Entity\\HotelService.Entity.csproj",
         "projectName": "HotelService.Entity",
-        "projectPath": "C:\\Users\\samet\\source\\repos\\HotelService\\HotelService.Entity\\HotelService.Entity.csproj",
+        "projectPath": "C:\\Users\\samet\\source\\repos\\HotelReservation\\HotelService.Entity\\HotelService.Entity.csproj",
         "packagesPath": "C:\\Users\\samet\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\samet\\source\\repos\\HotelService\\HotelService.Entity\\obj\\",
+        "outputPath": "C:\\Users\\samet\\source\\repos\\HotelReservation\\HotelService.Entity\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -140,14 +140,14 @@
         }
       }
     },
-    "C:\\Users\\samet\\source\\repos\\HotelService\\HotelService.WebUI\\HotelService.WebUI.csproj": {
+    "C:\\Users\\samet\\source\\repos\\HotelReservation\\HotelService.WebUI\\HotelService.WebUI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\samet\\source\\repos\\HotelService\\HotelService.WebUI\\HotelService.WebUI.csproj",
+        "projectUniqueName": "C:\\Users\\samet\\source\\repos\\HotelReservation\\HotelService.WebUI\\HotelService.WebUI.csproj",
         "projectName": "HotelService.WebUI",
-        "projectPath": "C:\\Users\\samet\\source\\repos\\HotelService\\HotelService.WebUI\\HotelService.WebUI.csproj",
+        "projectPath": "C:\\Users\\samet\\source\\repos\\HotelReservation\\HotelService.WebUI\\HotelService.WebUI.csproj",
         "packagesPath": "C:\\Users\\samet\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\samet\\source\\repos\\HotelService\\HotelService.WebUI\\obj\\",
+        "outputPath": "C:\\Users\\samet\\source\\repos\\HotelReservation\\HotelService.WebUI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -168,11 +168,11 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\samet\\source\\repos\\HotelService\\HotelSerivce.Data\\HotelSerivce.Data.csproj": {
-                "projectPath": "C:\\Users\\samet\\source\\repos\\HotelService\\HotelSerivce.Data\\HotelSerivce.Data.csproj"
+              "C:\\Users\\samet\\source\\repos\\HotelReservation\\HotelSerivce.Data\\HotelSerivce.Data.csproj": {
+                "projectPath": "C:\\Users\\samet\\source\\repos\\HotelReservation\\HotelSerivce.Data\\HotelSerivce.Data.csproj"
               },
-              "C:\\Users\\samet\\source\\repos\\HotelService\\HotelService.Entity\\HotelService.Entity.csproj": {
-                "projectPath": "C:\\Users\\samet\\source\\repos\\HotelService\\HotelService.Entity\\HotelService.Entity.csproj"
+              "C:\\Users\\samet\\source\\repos\\HotelReservation\\HotelService.Entity\\HotelService.Entity.csproj": {
+                "projectPath": "C:\\Users\\samet\\source\\repos\\HotelReservation\\HotelService.Entity\\HotelService.Entity.csproj"
               }
             }
           }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RTOXZSnwhIfZPhXaWY6vcPrDhZ2KdCqTEIfHpT9tpXloRzPlFIIed9hpTwPeB2zmoswb/J1K2Yf0ctZ4Cu8vxw==",
+  "dgSpecHash": "zsxp2EmiYB7FPr9UXDGNJKqsVdmJgLi0/U971KoDYEW4haJ/yFroqsndYdWqG4m4lzNiIBVkBnAxHq1OaUNVMg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\samet\\source\\repos\\HotelService\\HotelService.WebUI\\HotelService.WebUI.csproj",
+  "projectFilePath": "C:\\Users\\samet\\source\\repos\\HotelReservation\\HotelService.WebUI\\HotelService.WebUI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\samet\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\samet\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",

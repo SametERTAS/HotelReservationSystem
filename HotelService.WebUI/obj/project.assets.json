@@ -8934,11 +8934,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\samet\\source\\repos\\HotelService\\HotelService.WebUI\\HotelService.WebUI.csproj",
+      "projectUniqueName": "C:\\Users\\samet\\source\\repos\\HotelReservation\\HotelService.WebUI\\HotelService.WebUI.csproj",
       "projectName": "HotelService.WebUI",
-      "projectPath": "C:\\Users\\samet\\source\\repos\\HotelService\\HotelService.WebUI\\HotelService.WebUI.csproj",
+      "projectPath": "C:\\Users\\samet\\source\\repos\\HotelReservation\\HotelService.WebUI\\HotelService.WebUI.csproj",
       "packagesPath": "C:\\Users\\samet\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\samet\\source\\repos\\HotelService\\HotelService.WebUI\\obj\\",
+      "outputPath": "C:\\Users\\samet\\source\\repos\\HotelReservation\\HotelService.WebUI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -8959,11 +8959,11 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\samet\\source\\repos\\HotelService\\HotelSerivce.Data\\HotelSerivce.Data.csproj": {
-              "projectPath": "C:\\Users\\samet\\source\\repos\\HotelService\\HotelSerivce.Data\\HotelSerivce.Data.csproj"
+            "C:\\Users\\samet\\source\\repos\\HotelReservation\\HotelSerivce.Data\\HotelSerivce.Data.csproj": {
+              "projectPath": "C:\\Users\\samet\\source\\repos\\HotelReservation\\HotelSerivce.Data\\HotelSerivce.Data.csproj"
             },
-            "C:\\Users\\samet\\source\\repos\\HotelService\\HotelService.Entity\\HotelService.Entity.csproj": {
-              "projectPath": "C:\\Users\\samet\\source\\repos\\HotelService\\HotelService.Entity\\HotelService.Entity.csproj"
+            "C:\\Users\\samet\\source\\repos\\HotelReservation\\HotelService.Entity\\HotelService.Entity.csproj": {
+              "projectPath": "C:\\Users\\samet\\source\\repos\\HotelReservation\\HotelService.Entity\\HotelService.Entity.csproj"
             }
           }
         }
